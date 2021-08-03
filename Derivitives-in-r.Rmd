@@ -51,3 +51,18 @@ eval(expr = C)
 
 ```
 
+### Univariate derivitives 
+```{r}
+D <- expression(4.6 - (1.9 * z ^ 3))
+
+D1 <- D(expr = D, name = 'z')
+
+D1
+
+D2 <- D(expr = D1, name = 'z')
+
+D2
+
+
+```
+

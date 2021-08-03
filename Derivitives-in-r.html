@@ -199,6 +199,19 @@ D(expr = C, name= &#39;t&#39;)</code></pre>
 
 eval(expr = C)</code></pre>
 <pre><code>## [1] 0</code></pre>
+<div id="univariate-derivitives" class="section level3">
+<h3>Univariate derivitives</h3>
+<pre class="r"><code>D &lt;- expression(4.6 - (1.9 * z ^ 3))
+
+D1 &lt;- D(expr = D, name = &#39;z&#39;)
+
+D1</code></pre>
+<pre><code>## -(1.9 * (3 * z^2))</code></pre>
+<pre class="r"><code>D2 &lt;- D(expr = D1, name = &#39;z&#39;)
+
+D2</code></pre>
+<pre><code>## -(1.9 * (3 * (2 * z)))</code></pre>
+</div>
 
 
 
