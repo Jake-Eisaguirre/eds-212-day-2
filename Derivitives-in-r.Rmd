@@ -65,4 +65,45 @@ D2
 
 
 ```
+### Partial derivitives
+```{r}
+f_xyz <- expression((2 * (x ^ 2) * y) - (3 * x) + 1 + (4 * (z ^ 4) * x))
+
+Dx <- D(expr = f_xyz, name = 'x')
+
+Dx
+
+Dy <- D(expr = f_xyz, name = 'y')
+
+Dy
+
+Dz <- D(expr = f_xyz, name = 'z')
+
+Dz
+
+```
+
+### Make some plots
+
+```{r}
+fx <- function(x) {
+  2.4 * exp(-0.05 * x) * sin(x)
+}
+
+ggplot(data = data.frame(x = c(-0.5, 0.5)), aes(x=x)) + stat_function(fun = fx)
+```
+
+### Penguin bill length vs bill depth
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(color = species)) + labs(x='bill length (mm)', y='bill depth (mm)', title = 'Palmer Penguins')
+
+
+```
+### Jitter Plot
+```{r}
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_jitter(aes(color = species), width=0.1) + labs(x='Species', y='flipper length (mm)', title = 'Palmer Penguins')
+
+```
 
