@@ -171,8 +171,34 @@ pre code {
 </div>
 
 
-<p><br />
-</p>
+<p>###A Find derivitive and slope</p>
+<pre class="r"><code>A &lt;- expression(x ^ 3)
+
+D(expr = A, name = &#39;x&#39; )</code></pre>
+<pre><code>## 3 * x^2</code></pre>
+<pre class="r"><code>x &lt;- 3
+
+eval(expr = A)</code></pre>
+<pre><code>## [1] 27</code></pre>
+<p>###B Find derivitive and slope</p>
+<pre class="r"><code>B &lt;- expression (2 * ((3 * a + 2) ^ 4) - 5) 
+
+D(expr = B, name = &#39;a&#39;)</code></pre>
+<pre><code>## 2 * (4 * (3 * (3 * a + 2)^3))</code></pre>
+<pre class="r"><code>a &lt;- 1.2
+
+eval(expr = B)</code></pre>
+<pre><code>## [1] 1961.899</code></pre>
+<p>###C Find derivitive and slope</p>
+<pre class="r"><code>C &lt;- expression ((-4 * t) / (t ^ 2 + 1) ^ 3)
+
+D(expr = C, name= &#39;t&#39;)</code></pre>
+<pre><code>## -(4/(t^2 + 1)^3 + (-4 * t) * (3 * (2 * t * (t^2 + 1)^2))/((t^2 + 
+##     1)^3)^2)</code></pre>
+<pre class="r"><code>t &lt;- 0
+
+eval(expr = C)</code></pre>
+<pre><code>## [1] 0</code></pre>
 
 
 
